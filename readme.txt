@@ -35,6 +35,10 @@ Usher\register_shortcut( 'g j', array(
 ) );
 `
 
+== Screenshots ==
+
+1. Shortcuts panel (activated with '?').
+
 == Changelog ==
 
 = 1.0 =
