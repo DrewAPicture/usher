@@ -39,7 +39,7 @@ class Assets implements Loader {
 		// Mousetrap.
 		wp_register_script(
 			$handle = 'external-mousetrap',
-			$src = USHER_PLUGIN_URL . '/assets/js/mousetrap' . $suffix . '.js',
+			$src = USHER_PLUGIN_URL . '/assets/vendor/mousetrap/mousetrap' . $suffix . '.js',
 			$deps = array(),
 			$version = '1.6.2',
 			$footer = true
