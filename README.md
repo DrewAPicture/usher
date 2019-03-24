@@ -8,6 +8,8 @@ Usher brings Gmail-like keyboard shortcuts for navigating around the various cor
 
 Additionally, it includes a robust API for registering new global and screen-specific keyboard shortcuts.
 
+![Shortcuts panel listing shortcuts](http://mr.drewf.us/04e1f15b3e98/Screen%252520Shot%2525202019-03-23%252520at%2525206.37.58%252520PM.png)
+
 To register new shortcuts, use the Usher\register_shortcut() function. For example:
 
 **Add a shortcut for the EDD Dashboard**
