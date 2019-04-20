@@ -61,7 +61,7 @@ class Render_Dialog implements Loader {
 			<?php if ( ! empty( $shortcuts['current_screen'] ) ) : ?>
 				<h4><?php esc_html_e( 'Other Shortcuts', 'usher' ); ?></h4>
 
-				<?php foreach ( $shortcuts['global'] as $shortcut ) : ?>
+				<?php foreach ( $shortcuts['current_screen'] as $shortcut ) : ?>
 					<p style="display:block"><code><?php echo $shortcut['combo']; ?></code> <?php echo $shortcut['label']; ?></p>
 				<?php endforeach; ?>
 			<?php endif; ?>
@@ -111,15 +111,20 @@ class Render_Dialog implements Loader {
 			}
 
 			// By this point, only global and current screen shortcuts remain.
-			if ( 'global' !== $screen ) {
-				$screen = 'current_screen';
+			foreach ( $atts['screen'] as $screen_id ) {
+				if ( $screen_id === $current_screen ) {
+					$screen = 'current_screen';
+				} else {
+					$screen = 'global';
+				}
+
+				$this->shortcuts[ $screen ][] = array(
+					'combo' => $atts['shortcut'],
+					'label' => $atts['label'],
+					'url'   => $atts['url'] ?? '',
+				);
 			}
 
-			$this->shortcuts[ $screen ][] = array(
-				'combo' => $atts['shortcut'],
-				'label' => $atts['label'],
-				'url'   => $atts['url'] ?? '',
-			);
 		}
 	}
 
