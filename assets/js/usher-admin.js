@@ -4,8 +4,6 @@
 	var	Usher = Mousetrap,
 		shortcuts = usher_vars.shortcuts;
 
-	console.log( shortcuts );
-
 	// Shortcuts modal.
 	$( '#usher-shortcuts' ).dialog( {
 		title: usher_vars.title,
@@ -36,12 +34,23 @@
 		$( '#usher-shortcuts' ).dialog( 'open' );
 	} );
 
-	$.each( shortcuts.global, function( i, shortcut ) {
+	$.each( shortcuts.global, bindShortcuts );
+	$.each( shortcuts.current_screen, bindShortcuts );
+
+	/**
+	 * Binds Usher shortcuts.
+	 *
+	 * @since 1.0.1
+	 *
+	 * @param {Integer} i Index.
+	 * @param {Object} shortcut Shortcut object.
+	 */
+	function bindShortcuts( i, shortcut ) {
 		Usher.bind( shortcut.combo, function() {
 			if ( shortcut.url.length ) {
 				window.location.href = shortcut.url;
 			}
 		} );
-	} );
+	}
 
 } )( jQuery );
