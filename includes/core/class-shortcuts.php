@@ -63,8 +63,8 @@ class Shortcuts implements Loader {
 			'cap'   => 'upload_files',
 		) );
 
-		// Plugins (gpl, hehe)
-		register_shortcut( 'g p l', array(
+		// Plugins.
+		register_shortcut( 'p l', array(
 			'label' => __( 'Navigate to the Plugins screen', 'usher' ),
 			'url'   => 'plugins.php',
 			'cap'   => 'manage_plugins',
