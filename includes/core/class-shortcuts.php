@@ -92,7 +92,7 @@ class Shortcuts implements Loader {
 		) );
 
 		if ( is_multisite() ) {
-			register_shortcut( 'g n a', array(
+			register_shortcut( 'g n', array(
 				'label' => __( 'Navigate to the Network Admin', 'usher' ),
 				'url'   => 'network',
 				'cap'   => 'manage_network_options',
