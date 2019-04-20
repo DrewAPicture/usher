@@ -4,7 +4,7 @@ Tags: keyboard, shortcuts, navigation, admin
 Requires at least: 5.0
 Requires PHP: 7.0
 Tested up to: 5.1.1
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -40,6 +40,11 @@ Usher\register_shortcut( 'g j', array(
 1. Shortcuts panel (activated with '?').
 
 == Changelog ==
+
+= 1.0.1 =
+* New: Shortcuts can now be registered with fully-qualified URLs
+* Tweak: Updated the Plugins, Updates, and Network Admin screen shortcuts to two letters because of the unreliability of three-letter shortcuts
+* Fix: Ensure shortcuts targeted for the current screen get properly bound to the Usher JS object
 
 = 1.0 =
 * Initial Release

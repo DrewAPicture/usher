@@ -6,7 +6,7 @@
  * Author URI:  https://werdswords.com
  * Text Domain: usher
  * Domain Path: /languages
- * Version:     1.0.0
+ * Version:     1.0.1
  *
  * @package Usher
  * @author  Drew Jaynes (DrewAPicture)
