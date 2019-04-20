@@ -56,6 +56,7 @@ class Shortcut_Registry extends \Usher\Util\Registry {
 	 * If multiple screens are defined, a shortcut will be registered for each screen.
 	 *
 	 * @since 1.0.0
+	 * @since 1.0.1 Added support for fully-qualified URLs
 	 *
 	 * @param string $shortcut_id Shortcut.
 	 * @param array  $atts        {
@@ -80,7 +81,7 @@ class Shortcut_Registry extends \Usher\Util\Registry {
 				$atts['screen'] = array( $atts['screen'] );
 			}
 
-			$atts['screens'] = array_map( 'sanitize_key', $atts['screen'] );
+			$atts['screen'] = array_map( 'sanitize_key', $atts['screen'] );
 		} else {
 			$atts['screen'] = array( 'global' );
 		}
@@ -97,7 +98,11 @@ class Shortcut_Registry extends \Usher\Util\Registry {
 
 		// URL.
 		if ( ! empty( $atts['url'] ) ) {
-			$atts['url'] = admin_url( $atts['url'] );
+			if ( false !== strpos( $atts['url'], 'http' ) ) {
+				$atts['url'] = esc_url( $atts['url'] );
+			} else {
+				$atts['url'] = admin_url( $atts['url'] );
+			}
 		}
 
 		// Register the shortcut(s).
