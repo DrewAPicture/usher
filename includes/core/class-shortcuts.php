@@ -85,7 +85,7 @@ class Shortcuts implements Loader {
 		) );
 
 		// Updates.
-		register_shortcut( 'g u p', array(
+		register_shortcut( 'u p', array(
 			'label' => __( 'Navigate to the Updates screen', 'usher' ),
 			'url'   => 'update-core.php',
 			'cap'   => 'update_core',
