@@ -1,6 +1,6 @@
 # Usher
 
-* **Stable: v1.0.0**
+* **Stable: v1.0.1**
 * **Requires WP: 5.0**
 * **Requires PHP: 7.0**
 
